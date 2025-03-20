@@ -26,26 +26,143 @@ main {
   width: 100%;
 }
 
-.carousel {
+header nav {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  position: absolute;
+  padding: 2rem 1rem;
+  width: 100%;
+  top: 0rem;
+  left: 0;
+  z-index: 1;
+}
+header nav img {
+  height: 5vw;
+}
+@media (min-width: 1000px) {
+  header nav img {
+    height: 1vw;
+  }
+}
+header nav #close-icon {
+  display: none;
+}
+header nav #hamburger-icon {
+  display: inline-block;
+}
+@media (min-width: 1000px) {
+  header nav #hamburger-icon {
+    display: none;
+  }
+}
+header nav .company-logo {
+  display: inline-block;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  header nav .company-logo {
+    margin: 0 2rem;
+  }
+}
+header nav .menu {
+  display: none;
+  margin: 0 auto;
+  gap: 2rem;
+  justify-content: end;
+  width: 100%;
+}
+header nav .menu a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+@media (min-width: 1000px) {
+  header nav .menu a {
+    color: hsl(0, 0%, 100%);
+  }
+}
+@media (min-width: 1000px) {
+  header nav .menu {
+    display: flex;
+    margin: 0;
+    justify-content: start;
+  }
+}
+header nav.show {
+  background-color: white;
+}
+header nav.show #close-icon {
+  display: inline-block;
+}
+header nav.show #hamburger-icon {
+  display: none;
+}
+header nav.show .company-logo {
+  display: none;
+}
+header nav.show .menu {
+  display: flex;
+}
+header .carousel {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-
-.carousel-container {
+header .carousel-container {
   display: flex;
   flex-direction: row;
   transform: translateX(0);
   transition: transform 1s ease;
 }
-
-.carousel-item {
+header .carousel-item {
   flex: 0 0 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
-.carousel-arrows {
+header .carousel-item .caption {
+  padding: 1rem;
+}
+@media (min-width: 1000px) {
+  header .carousel-item {
+    flex-direction: row;
+  }
+}
+header .carousel-arrows {
+  position: absolute;
+  right: 0;
+  top: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header .carousel-arrows .arrow-container {
+  width: 56px;
+  height: 56px;
   background-color: hsl(0, 0%, 0%);
+  text-align: center;
+  line-height: 56px;
+}
+header .carousel-arrows .arrow-container img {
+  width: 14px;
+  height: 14px;
+}
+header .carousel-arrows .arrow-container:focus, header .carousel-arrows .arrow-container:hover {
+  background-color: hsl(0, 0%, 27%);
+  cursor: pointer;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.about .about-furnature {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+@media (min-width: 1000px) {
+  .about {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=style.css.map */

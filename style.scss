@@ -2,6 +2,7 @@ $color-white: hsl(0, 0%, 100%);
 $color-black: hsl(0, 0%, 0%);
 $color-dark-gray: hsl(0, 0%, 63%);
 $color-very-dark-gray: hsl(0, 0%, 27%);
+$breakpoint: 1000px;
 @mixin typography($sz,$fm,$wt,$lh,$ls) {
     font-size: $sz;
     font-family: $fm, Arial, Helvetica, sans-serif;
@@ -34,24 +35,131 @@ body {
 main {
     width: 100%;
 }
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+header {
+    nav {
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+        position: absolute;
+        padding: 2rem 1rem;
+        width: 100%;
+        top: 0rem;
+        left: 0;
+        z-index: 1;
+        img {
+            height: 5vw;
+            @media (min-width: $breakpoint){
+                height: 1vw;
+            }
+        }
+        #close-icon {
+            display: none;
+        }
+        #hamburger-icon {
+            display: inline-block;
+            @media (min-width: $breakpoint){
+                display: none;
+            }
+        }
+        .company-logo {
+            display: inline-block;
+            margin: 0 auto;
+            @media (min-width: $breakpoint){
+                margin: 0 2rem;
+            }
+        }
+        .menu {
+            display: none;
+            margin: 0 auto;
+            gap: 2rem;
+            justify-content: end;
+            width: 100%;
+            a {
+                text-decoration: none;
+                color: $color-black;
+                @media (min-width: $breakpoint){
+                    color: $color-white;
+                }
+            }
+            @media (min-width: $breakpoint){
+                display: flex;
+                margin: 0;
+                justify-content: start;
+            }
+        }
+    }
+    nav.show {
+        background-color: white;
+        #close-icon {
+            display: inline-block;
+        }
+        #hamburger-icon {
+            display: none;
+        }
+        .company-logo {
+            display: none;
+        }
+        .menu {
+            display: flex;
+        }
+    }
+    .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .carousel-container {
+        display: flex;
+        flex-direction: row;
+        // position: relative;
+        transform: translateX(0);
+        transition: transform 1s ease;
+    }
+    .carousel-item {
+        flex: 0 0 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .caption{
+            padding: 1rem;
+        }
+        @media (min-width: $breakpoint){
+            flex-direction: row;
+        }
+    }
+    .carousel-arrows {
+        position: absolute;
+        right: 0;
+        top: 300px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .arrow-container {
+            width: 56px;
+            height: 56px;
+            background-color: $color-black;
+            text-align: center;
+            line-height: 56px;
+            img {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        .arrow-container:focus, .arrow-container:hover {
+            background-color: $color-very-dark-gray;
+            cursor: pointer;
+        }
+    }
 }
-.carousel-container {
-    display: flex;
-    flex-direction: row;
-    // position: relative;
-    transform: translateX(0);
-    transition: transform 1s ease;
-}
-.carousel-item {
-    flex: 0 0 100%;
-    width: 100%;
+.about {
     display: flex;
     flex-direction: column;
-}
-.carousel-arrows {
-    background-color: $color-black;
+    .about-furnature {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    @media (min-width: $breakpoint){
+        flex-direction: row;
+    }
 }

@@ -6,7 +6,7 @@ const max_count = 3;
 console.log(left_arrow, right_arrow, carousel);
 
 left_arrow.addEventListener('click', () => {
-    console.log('left', count);6
+    console.log('left', count);
     if(count > 0) {
         count --;
         let offset = count * window.innerWidth;
@@ -23,4 +23,17 @@ right_arrow.addEventListener('click', () => {
         console.log(offset, window.innerWidth);
         carousel.style.transform = `translateX(-${offset}px)`;
     }
+});
+
+const nav = document.getElementById('nav-bar');
+const showMenu = () => {
+    nav.classList.add('show');
+}
+const hideMenu = () => {
+    nav.classList.remove('show');
+}
+document.getElementById('hamburger-icon').addEventListener('click', showMenu);
+document.getElementById('close-icon').addEventListener('click', hideMenu);
+nav.querySelectorAll('.menu > a').forEach(elm => {
+    elm.addEventListener('click', hideMenu)
 });
