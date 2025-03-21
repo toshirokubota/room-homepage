@@ -37,3 +37,9 @@ document.getElementById('close-icon').addEventListener('click', hideMenu);
 nav.querySelectorAll('.menu > a').forEach(elm => {
     elm.addEventListener('click', hideMenu)
 });
+
+
+window.onresize = () => {
+    let elm = document.querySelector('.carousel-item img');
+    console.log(elm.clientWidth, elm.clientHeight);
+}
