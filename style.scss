@@ -107,20 +107,42 @@ header {
         position: relative;
         width: 100%;
         overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto auto;
     }
     .carousel-container {
-        display: flex;
-        flex-direction: row;
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        // display: flex;
+        // flex-direction: row;
         // position: relative;
+        display: grid;
+        grid-template-columns: 1fr; //repeat(3, 1fr);
+        grid-template-rows: subgrid;
         transform: translateX(0);
-        transition: transform 1s ease;
+        transition: transform 0.5s ease;
     }
     .carousel-item {
-        flex: 0 0 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+        // flex: 0 0 100%;
+        //width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        font-size: 0;
+        grid-row: 1/-1;
+        grid-column: auto;
+        // grid-column: index;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: subgrid;
+        picture {
+            grid-row: 1/3;
+            grid-column: 1/2;
+        }
         .caption{
+            font-size: initial;
+            grid-row: 3/4;
+            grid-column: 1/2;
             padding: 1rem;
         }
         @media (min-width: $breakpoint){
@@ -128,12 +150,15 @@ header {
         }
     }
     .carousel-arrows {
-        position: absolute;
-        right: 0;
-        top: 300px;
+        grid-row: 2/3;
+        grid-column: 2/3;
+        // position: absolute;
+        // right: 0;
+        // top: 300px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        z-index: 1;
         .arrow-container {
             width: 56px;
             height: 56px;
