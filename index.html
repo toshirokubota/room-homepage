@@ -21,91 +21,85 @@
 </head>
 <body>
   <main>
-    <header>
-      <nav id="nav-bar">
-        <img id='hamburger-icon' src="./images/icon-hamburger.svg" alt="collapsed menu"/>
-        <img id='close-icon' src="./images/icon-close.svg" alt="close menu"/>
-        <img class='company-logo' src="./images/logo.svg" alt="company logo"/>
-        <div class="menu">
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+    <nav id="nav-bar">
+      <img id='hamburger-icon' src="./images/icon-hamburger.svg" alt="collapsed menu"/>
+      <img id='close-icon' src="./images/icon-close.svg" alt="close menu"/>
+      <img class='company-logo' src="./images/logo.svg" alt="company logo"/>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+    <div class="carousel">
+      <div class="carousel-pictures">
+          <picture>
+            <source srcset="./images/desktop-image-hero-1.jpg" media="(min-width: 1000px)">
+            <img src="./images/mobile-image-hero-1.jpg" alt="modern geometrically shaped chairs with a table" />
+          </picture>
+          <picture>
+            <source srcset="./images/desktop-image-hero-2.jpg" media="(min-width: 1000px)">
+            <img src="./images/mobile-image-hero-2.jpg" alt="modern colorful chairs" />
+          </picture>
+          <picture>
+            <source srcset="./images/desktop-image-hero-3.jpg" media="(min-width: 1000px)">
+            <img src="./images/mobile-image-hero-3.jpg" alt="a simple foldable chair" />
+          </picture>
         </div>
-      </nav>
-      <div class="carousel">
-        <div class="carousel-container">
-          <div class="carousel-item">
-            <picture>
-              <source srcset="./images/desktop-image-hero-1.jpg" media="(min-width: 1000px)">
-              <img src="./images/mobile-image-hero-1.jpg" alt="modern geometrically shaped chairs with a table" />
-            </picture>
-            <div class="caption">
-              <h1>
-                Discover innovative ways to decorate
-              </h1>
-              <p>
-                We provide unmatched quality, comfort, and style for property owners across the country. 
-                Our experts combine form and function in bringing your vision to life. Create a room in your 
-                own style with our collection and make your property a reflection of you and what you love.
-              </p>
-              <div>
-                Shop now
-                <img src="./images/icon-arrow.svg" alt="long left arrow"/>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <picture>
-              <source srcset="./images/desktop-image-hero-2.jpg" media="(min-width: 1000px)">
-              <img src="./images/mobile-image-hero-2.jpg" alt="modern colorful chairs" />
-            </picture>
-            <div class="caption">
-              <h1>
-                We are available all across the globe
-              </h1>
-              <p>
-                With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-                Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-                store locator. Any questions? Don't hesitate to contact us today.
-              </p>
-              <div>
-                Shop now
-                <img src="./images/icon-arrow.svg" alt="long left arrow"/>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <picture>
-              <source srcset="./images/desktop-image-hero-3.jpg" media="(min-width: 1000px)">
-              <img src="./images/mobile-image-hero-3.jpg" alt="a simple foldable chair" />
-            </picture>
-            <div class="caption">
-              <h1>
-                Manufactured with the best materials
-              </h1>
-              <p>
-                Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-                to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-                experience in this industry, we understand what customers want for their home and office.
-              </p>          
-              <div>
-                Shop now
-                <img src="./images/icon-arrow.svg" alt="long left arrow"/>
-              </div>                    
-            </div>
+      <div class="carousel-captions">
+        <div class="caption">
+          <h1>
+            Discover innovative ways to decorate
+          </h1>
+          <p>
+            We provide unmatched quality, comfort, and style for property owners across the country. 
+            Our experts combine form and function in bringing your vision to life. Create a room in your 
+            own style with our collection and make your property a reflection of you and what you love.
+          </p>
+          <div>
+            Shop now
+            <img src="./images/icon-arrow.svg" alt="long left arrow"/>
           </div>
         </div>
-        <div class="carousel-arrows">
-          <div id='carousel-left-arrow' class="arrow-container">
-            <img src="./images/icon-angle-left.svg" alt="left arrow for carousel"/>
+        <div class="caption">
+          <h1>
+            We are available all across the globe
+          </h1>
+          <p>
+            With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+            Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
+            store locator. Any questions? Don't hesitate to contact us today.
+          </p>
+          <div>
+            Shop now
+            <img src="./images/icon-arrow.svg" alt="long left arrow"/>
           </div>
-          <div id='carousel-right-arrow' class="arrow-container">
-            <img src="./images/icon-angle-right.svg" alt="right arrow for carousel"/>
-          </div>
+        </div>
+        <div class="caption">
+          <h1>
+            Manufactured with the best materials
+          </h1>
+          <p>
+            Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+            to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+            experience in this industry, we understand what customers want for their home and office.
+          </p>          
+          <div>
+            Shop now
+            <img src="./images/icon-arrow.svg" alt="long left arrow"/>
+          </div>                    
         </div>
       </div>
-    </header>
+      <div class="carousel-arrows">
+        <div id='carousel-left-arrow' class="arrow-container">
+          <img src="./images/icon-angle-left.svg" alt="left arrow for carousel"/>
+        </div>
+        <div id='carousel-right-arrow' class="arrow-container">
+          <img src="./images/icon-angle-right.svg" alt="right arrow for carousel"/>
+        </div>
+      </div>
+    </div>
 
     <section class="about">
       <img src="./images/image-about-dark.jpg" alt="dark interior image"/>

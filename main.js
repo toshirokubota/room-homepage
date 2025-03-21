@@ -1,9 +1,10 @@
 const left_arrow = document.getElementById('carousel-left-arrow');
 const right_arrow = document.getElementById('carousel-right-arrow');
-const carousel = document.querySelector('.carousel-container');
+const carousel_pics = document.querySelector('.carousel-pictures');
+const carousel_txts = document.querySelector('.carousel-captions');
 let count = 0;
-const max_count = 3;
-console.log(left_arrow, right_arrow, carousel);
+const max_count = document.querySelectorAll('.carousel-pictures > picture').length;
+console.log(max_count, left_arrow, right_arrow, carousel_pics, carousel_txts);
 
 left_arrow.addEventListener('click', () => {
     console.log('left', count);
@@ -11,7 +12,8 @@ left_arrow.addEventListener('click', () => {
         count --;
         let offset = count * window.innerWidth;
         console.log(offset, window.innerWidth);
-        carousel.style.transform = `translateX(-${offset}px)`;
+        carousel_pics.style.transform = `translateX(${offset}px)`;
+        carousel_txts.style.transform = `translateX(${offset}px)`;
     }
 });
 
@@ -21,7 +23,8 @@ right_arrow.addEventListener('click', () => {
         count ++;
         let offset = count * window.innerWidth;
         console.log(offset, window.innerWidth);
-        carousel.style.transform = `translateX(-${offset}px)`;
+        carousel_pics.style.transform = `translateX(-${offset}px)`;
+        carousel_txts.style.transform = `translateX(-${offset}px)`;
     }
 });
 
@@ -39,7 +42,7 @@ nav.querySelectorAll('.menu > a').forEach(elm => {
 });
 
 
-window.onresize = () => {
-    let elm = document.querySelector('.carousel-item img');
-    console.log(elm.clientWidth, elm.clientHeight);
-}
+// window.onresize = () => {
+//     let elm = document.querySelector('.carousel-item img');
+//     console.log(elm.clientWidth, elm.clientHeight);
+// }
