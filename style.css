@@ -112,7 +112,7 @@ main .carousel-viewport {
 }
 main .carousel-pictures, main .carousel-captions {
   transform: translateX(0);
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 main .caption {
   padding: 2rem;
@@ -145,7 +145,7 @@ main .caption .shop-now:focus, main .caption .shop-now:hover {
 }
 @media (min-width: 1000px) {
   main .caption {
-    padding: 4rem;
+    padding: clamp(2rem, 2rem + (100vw - 1000px) / 20, 4rem);
   }
   main .caption h1 {
     font-size: 48px;
@@ -160,9 +160,9 @@ main .carousel-arrows {
   z-index: 1;
 }
 main .carousel-arrows .arrow-container {
-  width: 56px;
-  height: 56px;
-  line-height: 56px;
+  width: clamp(56px, 56px + (100vw - 1000px) / 20, 80px);
+  height: clamp(56px, 56px + (100vw - 1000px) / 20, 80px);
+  line-height: clamp(56px, 56px + (100vw - 1000px) / 20, 80px);
   background-color: hsl(0, 0%, 0%);
   text-align: center;
 }
@@ -171,11 +171,6 @@ main .carousel-arrows .arrow-container img {
   height: 14px;
 }
 @media (min-width: 1000px) {
-  main .carousel-arrows .arrow-container {
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-  }
   main .carousel-arrows .arrow-container img {
     width: 16px;
     height: 16px;
@@ -286,7 +281,7 @@ main .about {
   main {
     display: grid;
     grid-template-columns: 1fr auto auto 1fr;
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-rows: repeat(3, auto);
   }
   main .carousel-viewport-pictures {
     grid-column: 1/3;
