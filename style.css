@@ -73,6 +73,9 @@ main nav .menu {
   width: 100%;
 }
 main nav .menu a {
+  font-size: 16px;
+  letter-spacing: -0.67px;
+  font-weight: 600;
   text-decoration: none;
   color: hsl(0, 0%, 0%);
 }
@@ -103,21 +106,51 @@ main nav.show .company-logo {
 main nav.show .menu {
   display: flex;
 }
-main .carousel {
-  position: relative;
+main .carousel-viewport {
   width: 100%;
   overflow: hidden;
 }
-main .carousel-container {
+main .carousel-pictures, main .carousel-captions {
   transform: translateX(0);
   transition: transform 0.5s ease;
 }
-main .carousel-item {
-  font-size: 0;
+main .caption {
+  padding: 2rem;
 }
-main .carousel-item .caption {
-  font-size: initial;
-  padding: 1rem;
+main .caption * + * {
+  margin-top: 1rem;
+}
+@media (min-width: 1000px) {
+  main .caption {
+    padding: 4rem;
+  }
+  main .caption h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: auto;
+  }
+  main .caption div {
+    color: hsl(0, 0%, 63%);
+  }
+}
+main .caption h1 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -1.67px;
+  line-height: 40px;
+}
+main .caption p {
+  font-size: 16px;
+  letter-spacing: -0.33px;
+  line-height: 22px;
+  color: hsl(0, 0%, 63%);
+}
+main .caption div {
+  margin: 2rem 0;
+  font-size: 15px;
+  letter-spacing: 12.5px;
+  line-height: 16px;
+  text-transform: uppercase;
 }
 main .carousel-arrows {
   display: flex;
@@ -140,8 +173,43 @@ main .carousel-arrows .arrow-container:focus, main .carousel-arrows .arrow-conta
   background-color: hsl(0, 0%, 27%);
   cursor: pointer;
 }
-main .about .about-furnature {
-  padding: 1rem;
+main .about {
+  padding: 2rem;
+}
+main .about * + * {
+  margin-top: 1rem;
+}
+@media (min-width: 1000px) {
+  main .about {
+    padding: 0rem;
+  }
+  main .about * + * {
+    margin-top: inherit;
+  }
+}
+main .about img {
+  width: 100%;
+}
+main .about .about-furnature * + * {
+  margin-top: 1rem;
+}
+main .about .about-furnature h2 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 5.83px;
+}
+main .about .about-furnature p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.33px;
+  color: hsl(0, 0%, 63%);
+}
+@media (min-width: 1000px) {
+  main .about .about-furnature {
+    padding: 2rem;
+  }
 }
 
 main {
@@ -149,36 +217,36 @@ main {
   grid-template-columns: 1fr auto;
   grid-template-rows: repeat(6, auto);
 }
-main .carousel {
-  grid-column: 1/-1;
-  grid-row: 1/4;
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: subgrid;
-}
-main .carousel .carousel-pictures {
-  width: 300%;
-  overflow: hidden;
+main .carousel-viewport-pictures {
   grid-column: 1/-1;
   grid-row: 1/3;
-  object-fit: cover;
-  display: flex;
-  flex-direction: row;
 }
-main .carousel .carousel-pictures picture {
-  width: 100%;
-  font-size: 0;
-}
-main .carousel .carousel-captions {
+main .carousel-viewport-pictures .carousel-pictures {
   width: 300%;
   overflow: hidden;
-  grid-column: 1/-1;
-  grid-row: 3/4;
   object-fit: cover;
   display: flex;
   flex-direction: row;
 }
-main .carousel .carousel-captions .caption {
+main .carousel-viewport-pictures .carousel-pictures picture {
+  font-size: 0;
+  width: 100%;
+}
+main .carousel-viewport-pictures .carousel-pictures picture img {
+  width: 100%;
+}
+main .carousel-viewport-captions {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+}
+main .carousel-viewport-captions .carousel-captions {
+  width: 300%;
+  overflow: hidden;
+  object-fit: cover;
+  display: flex;
+  flex-direction: row;
+}
+main .carousel-viewport-captions .carousel-captions .caption {
   width: 100%;
 }
 main .carousel-arrows {
@@ -193,4 +261,73 @@ main .about {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+}
+
+@media (min-width: 1000px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-rows: 1fr auto 1fr;
+  }
+  main .carousel-viewport-pictures {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  main .carousel-viewport-pictures .carousel-pictures {
+    width: 300%;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+  }
+  main .carousel-viewport-pictures .carousel-pictures picture {
+    font-size: 0;
+    width: 100%;
+  }
+  main .carousel-viewport-pictures .carousel-pictures picture img {
+    width: 100%;
+  }
+  main .carousel-viewport-captions {
+    grid-column: 3/5;
+    grid-row: 1/3;
+  }
+  main .carousel-viewport-captions .carousel-captions {
+    width: 300%;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+  }
+  main .carousel-viewport-captions .carousel-captions .caption {
+    width: 100%;
+  }
+  main .carousel-arrows {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    justify-self: end;
+    align-self: end;
+  }
+  main .about {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+  }
+  main .about .about-left-img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  main .about .about-furnature {
+    grid-column: 2/4;
+    grid-row: 1/2;
+  }
+  main .about .about-right-img {
+    grid-column: 4/5;
+    grid-row: 1/2;
+  }
+  main .about img {
+    width: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
