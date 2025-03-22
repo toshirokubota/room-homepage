@@ -112,26 +112,13 @@ main .carousel-viewport {
 }
 main .carousel-pictures, main .carousel-captions {
   transform: translateX(0);
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
 }
 main .caption {
   padding: 2rem;
 }
 main .caption * + * {
   margin-top: 1rem;
-}
-@media (min-width: 1000px) {
-  main .caption {
-    padding: 4rem;
-  }
-  main .caption h1 {
-    font-size: 48px;
-    letter-spacing: -2px;
-    line-height: auto;
-  }
-  main .caption div {
-    color: hsl(0, 0%, 63%);
-  }
 }
 main .caption h1 {
   font-size: 40px;
@@ -145,12 +132,26 @@ main .caption p {
   line-height: 22px;
   color: hsl(0, 0%, 63%);
 }
-main .caption div {
+main .caption .shop-now {
   margin: 2rem 0;
   font-size: 15px;
   letter-spacing: 12.5px;
   line-height: 16px;
   text-transform: uppercase;
+}
+main .caption .shop-now:focus, main .caption .shop-now:hover {
+  cursor: pointer;
+  color: hsl(0, 0%, 63%);
+}
+@media (min-width: 1000px) {
+  main .caption {
+    padding: 4rem;
+  }
+  main .caption h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: auto;
+  }
 }
 main .carousel-arrows {
   display: flex;
@@ -161,13 +162,24 @@ main .carousel-arrows {
 main .carousel-arrows .arrow-container {
   width: 56px;
   height: 56px;
+  line-height: 56px;
   background-color: hsl(0, 0%, 0%);
   text-align: center;
-  line-height: 56px;
 }
 main .carousel-arrows .arrow-container img {
   width: 14px;
   height: 14px;
+}
+@media (min-width: 1000px) {
+  main .carousel-arrows .arrow-container {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+  main .carousel-arrows .arrow-container img {
+    width: 16px;
+    height: 16px;
+  }
 }
 main .carousel-arrows .arrow-container:focus, main .carousel-arrows .arrow-container:hover {
   background-color: hsl(0, 0%, 27%);
@@ -198,6 +210,13 @@ main .about .about-furnature h2 {
   font-weight: 700;
   line-height: 22px;
   letter-spacing: 5.83px;
+  text-transform: uppercase;
+}
+@media (min-width: 1000px) {
+  main .about .about-furnature h2 {
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
 }
 main .about .about-furnature p {
   font-size: 16px;
